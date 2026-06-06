@@ -251,4 +251,7 @@ Abra http://localhost:5173/auth e use uma das contas abaixo:
 
 ---
 
+Link do Pitch no Youtube: 
+https://youtube.com/shorts/oQ71-0BquxE?si=0lFdpiFyBxanLxzK
+
 *© 2026 Sensagro — Plataforma enterprise de inteligência para o agronegócio*
