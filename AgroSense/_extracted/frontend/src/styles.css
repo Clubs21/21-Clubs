@@ -1,0 +1,193 @@
+﻿@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AgroSense — Design System
+ * Tema: dark / futurista / enterprise (Bloomberg + TradingView + SAP Analytics)
+ * Paleta: preto, grafite, verde escuro, verde neon
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Cores semânticas de risco */
+  --color-risk-low: var(--risk-low);
+  --color-risk-medium: var(--risk-medium);
+  --color-risk-high: var(--risk-high);
+  --color-risk-critical: var(--risk-critical);
+
+  /* Verdes da marca */
+  --color-neon: var(--neon);
+  --color-neon-foreground: var(--neon-foreground);
+  --color-forest: var(--forest);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Base dark — preto / grafite */
+  --background: oklch(0.16 0.012 160);
+  --foreground: oklch(0.95 0.01 150);
+  --card: oklch(0.2 0.014 165);
+  --card-foreground: oklch(0.95 0.01 150);
+  --popover: oklch(0.19 0.014 165);
+  --popover-foreground: oklch(0.95 0.01 150);
+
+  /* Verde neon como primário */
+  --primary: oklch(0.82 0.23 145);
+  --primary-foreground: oklch(0.16 0.03 160);
+
+  --secondary: oklch(0.26 0.02 165);
+  --secondary-foreground: oklch(0.92 0.01 150);
+  --muted: oklch(0.24 0.016 165);
+  --muted-foreground: oklch(0.65 0.02 155);
+  --accent: oklch(0.3 0.04 155);
+  --accent-foreground: oklch(0.95 0.02 150);
+
+  --destructive: oklch(0.6 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 150);
+
+  --border: oklch(0.3 0.018 165);
+  --input: oklch(0.28 0.018 165);
+  --ring: oklch(0.82 0.23 145);
+
+  /* Verdes marca */
+  --neon: oklch(0.85 0.24 142);
+  --neon-foreground: oklch(0.16 0.03 160);
+  --forest: oklch(0.42 0.09 158);
+
+  /* Sistema de risco */
+  --risk-low: oklch(0.82 0.23 145);
+  --risk-medium: oklch(0.85 0.17 90);
+  --risk-high: oklch(0.72 0.18 50);
+  --risk-critical: oklch(0.62 0.22 25);
+
+  /* Charts */
+  --chart-1: oklch(0.85 0.24 142);
+  --chart-2: oklch(0.55 0.12 175);
+  --chart-3: oklch(0.85 0.17 90);
+  --chart-4: oklch(0.7 0.17 50);
+  --chart-5: oklch(0.62 0.13 200);
+
+  /* Gradientes & sombras */
+  --gradient-neon: linear-gradient(135deg, oklch(0.85 0.24 142), oklch(0.6 0.16 165));
+  --gradient-surface: linear-gradient(160deg, oklch(0.22 0.016 165), oklch(0.17 0.012 160));
+  --gradient-glow: radial-gradient(circle at 30% 20%, oklch(0.85 0.24 142 / 0.18), transparent 60%);
+  --shadow-glow: 0 0 24px -4px oklch(0.85 0.24 142 / 0.35);
+  --shadow-card: 0 8px 30px -12px oklch(0 0 0 / 0.6);
+
+  /* Sidebar */
+  --sidebar: oklch(0.18 0.013 162);
+  --sidebar-foreground: oklch(0.88 0.01 150);
+  --sidebar-primary: oklch(0.85 0.24 142);
+  --sidebar-primary-foreground: oklch(0.16 0.03 160);
+  --sidebar-accent: oklch(0.26 0.025 158);
+  --sidebar-accent-foreground: oklch(0.95 0.02 150);
+  --sidebar-border: oklch(0.28 0.018 165);
+  --sidebar-ring: oklch(0.85 0.24 142);
+}
+
+.dark {
+  --background: oklch(0.16 0.012 160);
+  --foreground: oklch(0.95 0.01 150);
+  --card: oklch(0.2 0.014 165);
+  --card-foreground: oklch(0.95 0.01 150);
+  --popover: oklch(0.19 0.014 165);
+  --popover-foreground: oklch(0.95 0.01 150);
+  --primary: oklch(0.82 0.23 145);
+  --primary-foreground: oklch(0.16 0.03 160);
+  --secondary: oklch(0.26 0.02 165);
+  --secondary-foreground: oklch(0.92 0.01 150);
+  --muted: oklch(0.24 0.016 165);
+  --muted-foreground: oklch(0.65 0.02 155);
+  --accent: oklch(0.3 0.04 155);
+  --accent-foreground: oklch(0.95 0.02 150);
+  --destructive: oklch(0.6 0.21 25);
+  --destructive-foreground: oklch(0.98 0.01 150);
+  --border: oklch(0.3 0.018 165);
+  --input: oklch(0.28 0.018 165);
+  --ring: oklch(0.82 0.23 145);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 18px oklch(0.85 0.24 142 / 0.55);
+}
+
+@utility surface-card {
+  background-image: var(--gradient-surface);
+  box-shadow: var(--shadow-card);
+}
+
+@utility glow-ring {
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
