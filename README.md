@@ -2,7 +2,7 @@
 
 ---
 
-## i) Identificação
+## Equipe
 
 **Nome da equipe:** Sensagro Dev Team
 
@@ -16,7 +16,7 @@
 
 ---
 
-## ii) Escopo do Projeto
+## Escopo do Projeto
 
 ### Problema
 
@@ -33,7 +33,7 @@ O **Sensagro** é uma plataforma de Business Intelligence voltada ao agronegóci
 
 ---
 
-## iii) Stack Tecnológica
+## Stack Tecnológica
 
 ### Frontend
 
@@ -71,7 +71,7 @@ O **Sensagro** é uma plataforma de Business Intelligence voltada ao agronegóci
 > **Estágio atual (demo):** dados simulados em memória (`data/mock_data.py`).
 > **Previsto para produção:** PostgreSQL com ORM SQLAlchemy ou MongoDB Atlas para séries temporais de mercado.
 
-### APIs e Fontes de Dados Externas (referenciadas na plataforma)
+### APIs e Fontes de Dados Externas
 
 | Fonte | Dados utilizados |
 |---|---|
@@ -85,7 +85,7 @@ O **Sensagro** é uma plataforma de Business Intelligence voltada ao agronegóci
 
 ---
 
-## iv) Arquitetura
+## Arquitetura
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
@@ -157,86 +157,97 @@ Isolamento de dados por usuário:
 
 ---
 
-## v) Situação do Projeto
+## Situação do Projeto
 
 ### Requisitos implementados
 
 | # | Requisito | Status |
 |---|---|---|
-| 1 | Autenticação com e-mail + senha (bcrypt) | Implementado |
-| 2 | Verificação em dois fatores (2FA — código demo fixo) | Implementado |
-| 3 | JWT com expiração configurável (8h padrão) | Implementado |
-| 4 | 3 perfis de usuário: admin, produtor PR, produtor MT | Implementado |
-| 5 | Dashboard executivo com KPIs de mercado | Implementado |
-| 6 | Ticker de mercado em tempo real (simulado) | Implementado |
-| 7 | Tela "Minha Fazenda" com perfil e documentos enviados | Implementado |
-| 8 | Impacto de documentos nas métricas (antes/depois/variação) | Implementado |
-| 9 | Fluxo de análise de decisão em 6 etapas (/analise) | Implementado |
-| 10 | Recomendação personalizada: AGUARDAR vs VENDER AGORA | Implementado |
-| 11 | Alertas personalizados por usuário (/alertas) | Implementado |
-| 12 | Oportunidades personalizadas por usuário (/oportunidades) | Implementado |
-| 13 | Isolamento de dados: cada usuário vê apenas as próprias informações | Implementado |
-| 14 | Fontes oficiais exibidas abaixo de cada indicador | Implementado |
-| 15 | Tela de logística com transportadoras e fretes | Implementado |
-| 16 | Tela de armazenagem com mapa de silos | Implementado |
-| 17 | Scores de risco climático e logístico por produtor | Implementado |
-| 18 | Previsões de preço da soja (90 dias) | Implementado |
-| 19 | Tela de exportação (portos e rotas) | Implementado |
-| 20 | Painel administrativo (/admin) | Implementado |
-| 21 | Design responsivo (mobile + desktop) | Implementado |
-| 22 | Tema escuro (dark mode nativo) | Implementado |
-| 23 | Logo e identidade visual Sensagro integrados | Implementado |
-| 24 | SSR (Server-Side Rendering) com TanStack Start | Implementado |
-| 25 | CORS configurável por variável de ambiente | Implementado |
+| 1 | Autenticação com e-mail + senha (bcrypt) | ✅ Implementado |
+| 2 | Verificação em dois fatores (2FA — código demo fixo) | ✅ Implementado |
+| 3 | JWT com expiração configurável (8h padrão) | ✅ Implementado |
+| 4 | 3 perfis de usuário: admin, produtor PR, produtor MT | ✅ Implementado |
+| 5 | Dashboard executivo com KPIs de mercado | ✅ Implementado |
+| 6 | Ticker de mercado em tempo real (simulado) | ✅ Implementado |
+| 7 | Tela "Minha Fazenda" com perfil e documentos enviados | ✅ Implementado |
+| 8 | Impacto de documentos nas métricas (antes/depois/variação) | ✅ Implementado |
+| 9 | Fluxo de análise de decisão em 6 etapas (/analise) | ✅ Implementado |
+| 10 | Recomendação personalizada: AGUARDAR vs VENDER AGORA | ✅ Implementado |
+| 11 | Alertas personalizados por usuário (/alertas) | ✅ Implementado |
+| 12 | Oportunidades personalizadas por usuário (/oportunidades) | ✅ Implementado |
+| 13 | Isolamento de dados: cada usuário vê apenas as próprias informações | ✅ Implementado |
+| 14 | Fontes oficiais exibidas abaixo de cada indicador | ✅ Implementado |
+| 15 | Tela de logística com transportadoras e fretes | ✅ Implementado |
+| 16 | Tela de armazenagem com mapa de silos | ✅ Implementado |
+| 17 | Scores de risco climático e logístico por produtor | ✅ Implementado |
+| 18 | Previsões de preço da soja (90 dias) | ✅ Implementado |
+| 19 | Tela de exportação (portos e rotas) | ✅ Implementado |
+| 20 | Painel administrativo (/admin) | ✅ Implementado |
+| 21 | Design responsivo (mobile + desktop) | ✅ Implementado |
+| 22 | Tema escuro (dark mode nativo) | ✅ Implementado |
+| 23 | Logo e identidade visual Sensagro integrados | ✅ Implementado |
+| 24 | SSR (Server-Side Rendering) com TanStack Start | ✅ Implementado |
+| 25 | CORS configurável por variável de ambiente | ✅ Implementado |
 
 ### Requisitos planejados / em andamento
 
 | # | Requisito | Status |
 |---|---|---|
-| 26 | Banco de dados relacional (PostgreSQL) em produção | Planejado |
-| 27 | 2FA real com TOTP (Google Authenticator / pyotp) | Planejado |
-| 28 | Upload real de documentos (PDF/CSV com parsing automático) | Planejado |
-| 29 | Integração com API CEPEA/ESALQ (preço real da soja) | Planejado |
-| 30 | Integração com API INMET (clima em tempo real) | Planejado |
-| 31 | Integração com CBOT / CME (futuros de soja em tempo real) | Planejado |
-| 32 | Notificações push (alertas de preço e clima) | Planejado |
-| 33 | Módulo de simulação de cenários (preço × estoque × frete) | Planejado |
-| 34 | Exportação de relatórios em PDF | Planejado |
-| 35 | Multi-tenancy (múltiplas fazendas por usuário) | Planejado |
-| 36 | Aplicativo mobile (React Native ou PWA) | Planejado |
-| 37 | Deploy em nuvem (AWS / GCP / Railway) com CI/CD | Planejado |
+| 26 | Banco de dados relacional (PostgreSQL) em produção | 🔲 Planejado |
+| 27 | 2FA real com TOTP (Google Authenticator / pyotp) | 🔲 Planejado |
+| 28 | Upload real de documentos (PDF/CSV com parsing automático) | 🔲 Planejado |
+| 29 | Integração com API CEPEA/ESALQ (preço real da soja) | 🔲 Planejado |
+| 30 | Integração com API INMET (clima em tempo real) | 🔲 Planejado |
+| 31 | Integração com CBOT / CME (futuros de soja em tempo real) | 🔲 Planejado |
+| 32 | Notificações push (alertas de preço e clima) | 🔲 Planejado |
+| 33 | Módulo de simulação de cenários (preço × estoque × frete) | 🔲 Planejado |
+| 34 | Exportação de relatórios em PDF | 🔲 Planejado |
+| 35 | Multi-tenancy (múltiplas fazendas por usuário) | 🔲 Planejado |
+| 36 | Aplicativo mobile (React Native ou PWA) | 🔲 Planejado |
+| 37 | Deploy em nuvem (AWS / GCP / Railway) com CI/CD | 🔲 Planejado |
 
 ---
 
 ## Como executar localmente
 
-### Backend
+> **Pré-requisitos:** [Python 3.12+](https://python.org/downloads) · [Node.js 18+](https://nodejs.org) · [Bun](https://bun.sh) · Git
+
+**1. Clone o repositório**
+
+```bash
+git clone https://github.com/Clubs21/21-Clubs.git
+cd 21-Clubs
+```
+
+**2. Inicie o backend**
 
 ```bash
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
-# Documentação interativa: http://localhost:8000/docs
 ```
 
-### Frontend
+> API disponível em http://localhost:8000 · Documentação em http://localhost:8000/docs
+
+**3. Inicie o frontend** *(em outro terminal)*
 
 ```bash
 cd frontend
 bun install
 bun run dev
-# Aplicação: http://localhost:5173
 ```
 
-### Contas de demonstração
+> Aplicação disponível em http://localhost:5173
 
-| Usuário | E-mail | Senha | Perfil |
+**4. Acesse e faça login**
+
+Abra http://localhost:5173/auth e use uma das contas abaixo:
+
+| Usuário | E-mail | Senha | Código 2FA |
 |---|---|---|---|
-| João Melo (PR) | joao@fazendaparana.com.br | Parana@2026 | Produtor — recomendação AGUARDAR |
-| Carlos Lima (MT) | carlos@agromato.com.br | Agromato@2026 | Produtor — recomendação VENDER AGORA |
-| Admin Sensagro | admin@sensagro.io | Admin@2026 | Administrador |
-
-> Código 2FA para todos os usuários no ambiente demo: **123456**
+| João Melo — Produtor PR | joao@fazendaparana.com.br | Parana@2026 | 123456 |
+| Carlos Lima — Produtor MT | carlos@agromato.com.br | Agromato@2026 | 123456 |
+| Admin Sensagro | admin@sensagro.io | Admin@2026 | 123456 |
 
 ---
 
